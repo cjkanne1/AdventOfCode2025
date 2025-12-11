@@ -15,8 +15,11 @@ public class DayThreePartOne {
                 batteryBanks.add(sc.nextLine());
             }
             ArrayList<Integer> joltages = new ArrayList<>();
-            for(String s :  batteryBanks)
+            int counter = 0;
+            for(String s : batteryBanks)
             {
+                counter++;
+                System.out.println("Round: " + counter + " " + s);
                 int maxTens = Integer.parseInt(s.substring(0, 1));
                 int maxTenIndex = 0;
                 //first index to second to last index
@@ -44,16 +47,11 @@ public class DayThreePartOne {
                 joltages.add(joltage);
             }
             int cumulativeJoltage = 0;
-            for(int i = 0; i < joltages.size(); i++)
+            for(Integer jolt : joltages)
             {
-                cumulativeJoltage += joltages.get(i);
+                cumulativeJoltage += jolt;
             }
-            System.out.print(joltages.getFirst());
-            for(int i = 1; i < joltages.size(); i++)
-            {
-                System.out.print(" + " + joltages.get(i));
-            }
-            System.out.print(" = ");
+            System.out.print(" = \n");
             System.out.println(cumulativeJoltage);
         }
         catch(FileNotFoundException e)
