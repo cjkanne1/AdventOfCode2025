@@ -7,7 +7,6 @@ public class DayThreePartTwo {
     public static void main(String[] args)
     {
         try{
-            //Scanner sc =  new Scanner(new File("testInputDay3.txt"));
             Scanner sc =  new Scanner(new File("realInputDay3.txt"));
             ArrayList<String> batteryBanks =  new ArrayList<String>();
             while(sc.hasNext())
