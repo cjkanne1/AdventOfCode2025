@@ -7,7 +7,7 @@ public class DayFivePartTwo {
     public static void main(String[] args)
     {
         try {
-            Scanner sc = new Scanner(new File("realInputDay5.txt"));
+            Scanner sc = new Scanner(new File("testInputDay5.txt"));
             ArrayList<String> ranges = new ArrayList<>();
             while (sc.hasNextLine()) {
                 String currentRange = sc.nextLine();
