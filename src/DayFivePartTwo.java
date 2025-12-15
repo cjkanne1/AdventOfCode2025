@@ -19,6 +19,7 @@ public class DayFivePartTwo {
             }
             ArrayList<Long> lowers = new ArrayList<>();
             ArrayList<Long> uppers = new ArrayList<>();
+            //make the initial lowers
             for(String range : ranges)
             {
                 lowers.add(Long.parseLong(range.substring(0, range.indexOf("-"))));
@@ -33,6 +34,7 @@ public class DayFivePartTwo {
             ArrayList<Long> sortedUppers = new ArrayList<>(uppers.size());
             sortedLowers.add(lowers.getFirst());
             sortedUppers.add(uppers.getFirst());
+            //sort the ranges by increasing value of the lowers
             for(int i = 1; i < lowers.size(); i++)
             {
                 if(lowers.get(i) > sortedLowers.getLast())
@@ -56,6 +58,7 @@ public class DayFivePartTwo {
             ArrayList<String> mergedRanges = new ArrayList<>();
             System.out.println(sortedLowers);
             System.out.println(sortedUppers);
+            //condense the ranges by overlap
             for(int i = 0; i < sortedLowers.size() - 1; i++)
             {
                 System.out.println(sortedLowers.get(i + 1));
@@ -70,6 +73,7 @@ public class DayFivePartTwo {
                 }
                 else
                 {
+                    //if there is no overlap just add the range
                     mergedRanges.add(sortedLowers.get(i) + "-" + sortedUppers.get(i));
                     System.out.println(mergedRanges.getLast());
                 }
@@ -79,6 +83,7 @@ public class DayFivePartTwo {
             System.out.println(mergedRanges);
             mergedRanges = removeAdditionalOverlap(mergedRanges);
             System.out.println(mergedRanges);
+            //count the number of valid ids which for every range is the upper minus the lower plus one
             long freshCount = 0;
             for(int i  = 0; i < mergedRanges.size(); i++)
             {
